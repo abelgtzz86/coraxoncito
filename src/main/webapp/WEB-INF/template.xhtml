@@ -1,0 +1,155 @@
+<!DOCTYPE html [
+    <!ENTITY nbsp "&#160;">
+    <!ENTITY bull "&#8226;">
+    <!ENTITY copy "&#169;">
+    ]>
+    <html xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:ui="http://java.sun.com/jsf/facelets"
+          xmlns:p="http://primefaces.org/ui">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <link rel="shortcut icon" type="image/png" href="#{request.contextPath}/resources/main/images/favicon.ico" />
+            </f:facet>
+
+            <title>Tedisa</title>
+            <h:outputStylesheet name="main/css/showcase.css" />
+            <h:outputStylesheet name="main/css/perfect-scrollbar.css" />
+            <h:outputStylesheet name="main/css/sh.css" />
+            <h:outputStylesheet name="mobile/css/demo.css" />
+            <h:outputScript name="jquery/jquery.js" library="primefaces" />
+            <h:outputScript name="jquery/jquery-plugins.js" library="primefaces" />
+            <h:outputScript name="main/js/perfect-scrollbar.js" />
+            <h:outputScript name="main/js/showcase.js" />
+            <ui:insert name="head" />
+        </h:head>
+
+        <h:body>
+            <!-- PC CONTENT STARTS HERE-->
+            <div class="PC">
+
+                <div id="MENUSIDE">
+                    <span id="LOGO" class="bordersOfMenuSide">
+                        <h:graphicImage name="mobile/images/UrsulayAbel.png" />
+                        <h:graphicImage id="BlueLogo" styleClass="hiddenLogo" name="mobile/images/UrsulayAbel.png" />
+                    </span>
+                    <h:form>
+                        <p:menu>
+                            <p:submenu label="Menu">
+                                <p:menuitem value="Archivo G" outcome="/pages/archivoG.xhtml" icon="ui-icon-star"/>
+                                <p:menuitem value="Demo" outcome="/pages/panel.xhtml" icon="ui-icon-star"/>
+                                <p:menuitem value="¿Quien eres?" outcome="/pages/corazoncito.xhtml" />
+                                <p:menuitem value="¿Cuanto me quieres?" outcome="/pages/forms.xhtml" />
+                                <p:menuitem value="Invitacion" outcome="/pages/invitacion.xhtml" />
+                                <p:menuitem value="Invitacion 2" outcome="/pages/invitacion2.xhtml"/>
+                            </p:submenu>
+                        </p:menu>
+                    </h:form>
+                </div>
+                <script type="text/javascript">
+                    restoreMenuState();
+                </script>
+                <div id="CONTENTSIDE">
+                    <div id="CONTENTSIDEindent">
+                        <!-- header bar start-->
+                        <div class="ContentSideSections" id="PFTopLinksCover" style="height:60px;">
+                            <a id="LOGOTEXTSIDE" href="#{request.contextPath}/index.xhtml">
+                                <span class="dispBlock logoDarkText fontSize30">Ursula</span>
+                                <span class="dispBlock logoBlueText fontSize30 mediumFont">Y Abel</span>
+                            </a>
+                            <span class="PFTopLinks floatRight boldFont cursorPointer" id="themeSwitcher">
+                                <h:form>
+                                    <h:graphicImage name="main/images/themeswitcher.svg" /><span class="PFGrayText">PF</span><span class="PFDarkText">Themes</span>
+                                    <div id="GlobalThemeSwitcher" class="navOverlay">
+                                        <ui:repeat value="#{themeSwitcherView.themes}" var="theme">
+                                            <a href="#" data-theme="#{theme.name}"><span class="ui-theme ui-theme-#{theme}"></span><span class="ui-text">#{theme.displayName}</span></a>
+                                        </ui:repeat>
+                                    </div>
+                                    <p:remoteCommand name="changeTheme" actionListener="#{guestPreferences.changeTheme}" />
+                                </h:form>
+                            </span>
+                            <div class="mobileLogoCover">
+                                <h:graphicImage name="mobile/images/UrsulayAbel.png" style="height:40px;" styleClass="floatLeft marginRight10"/>
+                                <span class="dispBlock logoDarkText fontSize16 floatLeft">Nuestra <span class="dispBlock logoBlueText fontSize18 mediumFont">Boda</span></span> 
+                            </div>
+                            <select id="mobilemenu" class="selectmenu mediumFont">
+                                <option value="">Menu</option>
+                                <option value="#{request.contextPath}/pages/corazoncito.xhtml" class="LEVEL1">¿Quien eres?</option>
+                                <option value="#{request.contextPath}/pages/archivoG.xhtml" class="LEVEL1">Archivo G</option>
+                                <option value="#{request.contextPath}/pages/panel.xhtml" class="LEVEL1">Demo</option>
+                                <option value="#{request.contextPath}/pages/forms.xhtml" class="LEVEL1">¿Cuanto me quieres?</option>
+                                <option value="#{request.contextPath}/pages/invitacion.xhtml" class="LEVEL1">Invitacion</option>
+                                <option value="#{request.contextPath}/pages/invitacion2.xhtml" class="LEVEL1">Invitacion 2</option>
+                            </select>
+                            
+                            
+                        </div>
+                        <!-- header bar end-->
+
+                        <ui:insert name="content">
+
+                            <ui:insert name="subsubmenu"></ui:insert>
+
+                            <div class="ContentSideSections">
+                                <div class="Content100 overHidden TextShadow">
+                                    <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock"><ui:insert name="title" /></span>
+                                    <span class="defaultText dispTable"><ui:insert name="description" />
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="ContentSideSections Implementation">
+                                <ui:insert name="implementation" />
+                            </div>
+
+                            <div id="SourceContentSide" class="ContentSideSections Source">
+                                <div class="Content100 overHidden TextShadow">
+                                    <span class="defaultText">
+                                        <span class="fontSize18 logoBlueText">
+                                            <ui:insert name="source" />
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </ui:insert>
+
+                        <!-- footer start-->
+                        <div class="ContentSideSections">
+                            <span class="floatLeft fontSize14 gray"><a href="http://www.telepeajedinamico.mx/">Telepeaje Dinamico</a>, Copyright &copy; 2016<br />All rights reserved.</span>
+                            <!--<span class="floatRight fontSize14 gray">Running #{build.primefacesVersion} on #{build.jsfVersion}.</span>-->
+                            <span class="floatRight fontSize14 gray">by ajgutierrezz@itesoluciones.com</span>
+                            <div style="clear:both" />
+                        </div>
+                        <!-- footer end-->
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- PC CONTENT END-->
+
+            <ui:insert name="status">
+                <p:ajaxStatus style="width:64px;height:64px;position:fixed;right:5px;bottom:5px">
+                    <f:facet name="start">
+                        <p:graphicImage name="main/images/loader.gif" />
+                    </f:facet>
+
+                    <f:facet name="complete">
+                        <h:outputText value="" />
+                    </f:facet>
+                </p:ajaxStatus>
+            </ui:insert>
+
+            <ui:insert name="highlight">
+                <h:outputScript name="main/js/sh.js" target="body"/>
+            </ui:insert>
+
+            <ui:insert name="body"></ui:insert>
+        </h:body>
+    </html>

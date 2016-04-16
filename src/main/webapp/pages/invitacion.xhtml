@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="content">
+        <pm:content styleClass="jqm-content" style="font-family: Edwardian Script ITC;">
+            <p >Abel Gutierrez Zebadua Y Ursula Perez Rodriguez</p>
+            <p ><h:outputText value="#{imagesView.msgInvitacion}" /></p>
+            <p:graphicImage name="demo/images/boda/boda3.png" styleClass="content" />
+            <p:panel header="1ra. De corintios 13:4-7" toggleable="true" style="font-family: Edwardian Script ITC;">
+                <h:outputText value="El amor es paciente y muestra comprensión, 
+                              el amor no tiene celos, no aparenta ni se infla,
+                              no actúa con bajeza ni busca su propio interés, 
+                              nose deja llevar por la ira y olvida lo malo, 
+                              el amor, lo cree todo, lo espera todo, lo soporta todo" />
+                <p:graphicImage name="demo/images/boda/boda4.png" styleClass="content" />
+            </p:panel>
+
+            <p:panel header=" " toggleable="true" style="font-family: Edwardian Script ITC;">
+                <h:outputText value="Unidos con votos pronunciados con Amor,
+                              Dios juntó nuestras manos, Y nos señaló el camino,
+                              Dos vidas se transformaron en una sola,
+                              Ahora uniremos nuestras vidas,
+                              Y caminaremos con Amor y Fe.
+                              Este es el sueño que compartimos,
+                              El que queremos cuidar a través de los Años,
+                              A través de cualquier distancia,
+                              Este es el sueño que compartimos.
+
+                              El que hablará por Nosotros,
+                              Más que toda Palabra,
+                              El que nos reencontrará;
+                              Y se llama “AMOR”." />
+            </p:panel>
+
+            <p:panel header="Mesa de regalo de liverpool" >
+                <a target="_blank" href="http://www.liverpool.com.mx/tienda/giftregistry/giftRegistryDetail.jsp?eventDNo=37427847">
+                    <h:outputText value="Numero de evento = 37427847"/>
+                </a>
+            </p:panel>
+
+            <p:panel header="Donde y cuando" >
+                <h:outputText value="Se efectuara  primeramente a la bendición de Dios , en la parroquia de san juan bautista el día 27 de febrero  alas 18hrs
+                              y posteriormente a la ceremonia civil en el salón ´´jardines de coita´´ ubicado en boulevard juan Sabines."/>
+                <h:outputLink value="https://www.google.com.mx/maps/@16.7579373,-93.3671711,19.83z" title="Google maps">
+                    <h:outputText value="Google maps" />
+                </h:outputLink>
+            </p:panel>
+            <h2>Padres</h2>
+            <p:accordionPanel activeIndex="-1" multiple="true">
+                <p:tab title="Del Novio">
+                    Sergio A. Gutierrez Montoya Y H. Soledad Zebadua Montoya 
+                </p:tab>
+                <p:tab title="De la Novia">
+                    Pedro Perez Hernandez Y Yolanda Y. Rodriguez Espinosa 
+                </p:tab>
+
+            </p:accordionPanel>
+        </pm:content>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/mobile.xhtml">
+
+    <ui:define name="content">
+        <pm:content styleClass="jqm-content">
+            <h:form id="testForm">
+                <h2 class="first">¿Cuanto me quieres?</h2>
+                
+                <p:growl id="growl" showDetail="true" globalOnly="true"/>
+
+                <pm:field>
+                    <p:outputLabel value="Aniversario:" for="basic"/>
+                    <p:calendar id="basic" placeholder="Te quiero" value="#{testView.aniversario}" 
+                                required="true" requiredMessage="Hay amor como es posible que te olvidaras!!!"/>
+                    <p:message for="basic"/>
+                </pm:field>
+
+                <pm:field>
+                    <p:outputLabel  value="Mi cumpleaños:" for="cumple"/>
+                    <p:calendar id="cumple" placeholder="Te amo" value="#{testView.cumple}" required="true" requiredMessage="Si se ve como me quieres!!!"/>
+                    <p:message for="cumple"/>
+                </pm:field>
+
+                <pm:field>
+                    <p:outputLabel for="colorF" value="Mi color favorito" />
+                    <p:selectOneMenu id="colorF" value="#{testView.numColor}" required="true" requiredMessage="selecciona uno al tin marin de do pingue">
+                        <f:selectItem itemLabel="Selecciona uno" itemValue="" />
+                        <f:selectItem itemLabel="Verde" itemValue="1" />
+                        <f:selectItem itemLabel="Rosa" itemValue="2" />
+                        <f:selectItem itemLabel="Negro" itemValue="3" />
+                    </p:selectOneMenu>
+                    <p:message for="colorF" />
+                </pm:field>
+
+                <pm:field>
+                    <p:outputLabel for="slider" value="Que tanto me quieres" />
+                    <pm:inputSlider id="slider" value="100"/>
+                </pm:field>
+
+                <pm:field>
+                    <p:outputLabel for="selectOneRadio" value="¿Te quieres casar conmigo?" />
+                </pm:field>
+
+                <pm:field>
+                    <p:selectOneRadio id="selectOneRadio" value="#{testView.boda}" required="true" requiredMessage=":'( por lo menos dime quizas quizas quizas!!!">
+                        <f:selectItem itemLabel="Option A: SI" itemValue="1" />
+                        <f:selectItem itemLabel="Option B: A" itemValue="2" />
+                        <f:selectItem itemLabel="Option C: B" itemValue="3" />
+                    </p:selectOneRadio>
+                    <p:message for="selectOneRadio"/>
+                </pm:field>
+                <p:commandButton id="btn" value="Calificar" action="#{testView.puntos()}" update="testForm" icon="ui-icon-heart" />
+            </h:form>
+        </pm:content>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">
+        Archivo G
+    </ui:define>
+
+    <ui:define name="description">
+    </ui:define>
+    
+    <ui:define name="implementation">
+            <h:form id="excelForm" enctype="multipart/form-data">
+
+                <p:growl id="messages" showDetail="true" />
+                <h2 class="first"><p:outputLabel value="#{excelMB.hola}"/> </h2>
+                <!--<p:growl id="growl" showDetail="true" />-->
+                <p:messages globalOnly="true" showDetail="true" showSummary="true" />
+                <p:outputLabel value="Código de TAG"/><p:inputText value="Columna #{excelMB.ctag}" disabled="true"/>
+                <p:outputLabel value="Fecha de cruce"/><p:inputText value="Columna #{excelMB.cfecha}" disabled="true"/>
+                <p:outputLabel value="Hora de cruce"/><p:inputText value="Columna #{excelMB.chora}" disabled="true"/>
+                <p:outputLabel value="Importe al 100%"/><p:inputText value="Columna #{excelMB.cimporte}" disabled="true"/>
+                <p:fileUpload value="#{excelMB.file}" mode="simple" skinSimple="true"/>
+
+                <p:commandButton widgetVar="submit" value="Submit" ajax="false" actionListener="#{excelMB.upload()}" update="excelForm"/>
+                <p:progressBar ajax="false" value="#{excelMB.nfilas}" interval="1000" labelTemplate="{value} n" styleClass="animated"/>
+
+                <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false" resizable="false">
+                    <p:graphicImage name="/demo/images/ajaxloadingbar.gif" />
+                </p:dialog>
+
+                <p:commandButton value="Download" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s" rendered="#{excelMB.descarga}">
+                    <p:fileDownload value="#{excelMB.fileOut}" />
+                </p:commandButton>
+
+                <script type="text/javascript">
+                    function start() {
+                        PF('statusDialog').show();
+                    }
+
+                    function stop() {
+                        PF('statusDialog').hide();
+                    }
+                </script>
+
+            </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      template="/WEB-INF/template.xhtml">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <h:outputStylesheet name="mobile/css/demo.css" />
+        <h:outputStylesheet name="main/css/sh.css" />
+        <ui:insert name="head" />
+    </h:head>
+
+
+    <h:body>
+
+        <pm:page id="first" styleClass="jqm-demos">
+            <pm:header styleClass="jqm-header">
+                <h2><p:graphicImage name="mobile/images/UrsulayAbel.png" alt="Ursula y Abel" width="100%"/></h2>
+                <a class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" href="#menu" data-role="button" role="button">Menu</a>
+            </pm:header>
+
+            <div id="menu" data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+                <p:menu>
+                    <p:submenu label="hermosa">
+                        <p:menuitem value="¿Quien eres?" outcome="corazoncito" />
+                        <p:menuitem value="¿Cuanto me quieres?" outcome="forms" />
+                        <p:menuitem value="Invitacion" outcome="invitacion" />
+                        <p:menuitem value="Invitacion 2" outcome="invitacion2"/>
+                    </p:submenu> 
+                </p:menu>
+            </div>
+
+            <pm:content>
+
+                <p >Abel Gutierrez Zebadua Y Ursula Perez Rodriguez</p>
+                <p ><h:outputText value="#{invitacionView.msgInvitacion}" /></p>
+                <p:graphicImage name="demo/images/boda/boda3.png" styleClass="content" />
+                <h:form>
+                    <p:commandButton value="Siguiente" action="pm:second?transition=slidefade" icon="ui-icon-heart"/>
+                </h:form>
+
+            </pm:content>
+
+
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false">
+                <p style="font-family: Edwardian Script ITC;">por @Abel y @Ursulita corriendo y desplegado en exclusivo para nuestra boda</p>
+                <!--<p>by @abelitroo </p>-->
+            </pm:footer>
+        </pm:page>
+
+        <pm:page id="second">
+            <pm:header title="Pagina 2">
+                <p:button class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" outcome ="pm:first?transition=slidedown"  />
+            </pm:header>
+
+            <pm:content>
+                <p:panel header="1ra. De corintios 13:4-7" toggleable="true" style="font-family: Edwardian Script ITC;">
+                    <h:outputText value="El amor es paciente y muestra comprensión, 
+                                  el amor no tiene celos, no aparenta ni se infla,
+                                  no actúa con bajeza ni busca su propio interés, 
+                                  nose deja llevar por la ira y olvida lo malo, 
+                                  el amor, lo cree todo, lo espera todo, lo soporta todo" />
+                    <p:graphicImage name="demo/images/boda/boda4.png" styleClass="content" />
+                </p:panel>
+                <p:panel header=" " toggleable="true" style="font-family: Edwardian Script ITC;">
+                    <h:outputText value="Unidos con votos pronunciados con Amor,
+                                  Dios juntó nuestras manos, Y nos señaló el camino,
+                                  Dos vidas se transformaron en una sola,
+                                  Ahora uniremos nuestras vidas,
+                                  Y caminaremos con Amor y Fe.
+
+                                  Este es el sueño que compartimos,
+                                  El que queremos cuidar a través de los Años,
+                                  A través de cualquier distancia,
+                                  Este es el sueño que compartimos.
+                                  El que hablará por Nosotros,
+                                  Más que toda Palabra,
+                                  El que nos reencontrará;
+                                  Y se llama “AMOR”.
+                                  " />
+                </p:panel>
+                <p:commandButton value="Siguiente" action="pm:the?transition=flow" icon="ui-icon-heart"/>
+
+            </pm:content>
+        </pm:page>
+
+        <pm:page id="the">
+            <pm:header title="Pagina 3">
+                <p:button class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" outcome ="pm:second?transition=slideup"  />
+            </pm:header>
+            <pm:content>
+                <h:form id="cuestionarioForm">
+                    <p:growl id="growl" showDetail="true" globalOnly="true"/>
+                    <p:panel rendered="true" header="Para proporcionarte los datos de la fiestas tienes que contestar la siguientes preguntas" toggleable="true" collapsed="#{questionView.muestraDatos}"  toggleSpeed="5">
+                        <pm:field>
+                            <p:outputLabel value="¿Fecha de que nos hicimos novios?" for="primera"/>
+                            <p:selectOneRadio id="primera" value="#{questionView.fechaNovio}" required="true" requiredMessage="pon cualquiera pero no te olvides de la fecha de la fiesta">
+                                <f:selectItem itemLabel="23 de diciembre" itemValue="23 de diciembre" />
+                                <f:selectItem itemLabel="29 de febrero" itemValue="29 de febrero" />
+                                <f:selectItem itemLabel="Ya ni me acuerdo" itemValue="Ya ni me acuerdo" />
+                            </p:selectOneRadio>
+                            <p:message for="primera"/>
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel value="¿Cuanto tiempo llevan de novios?" for="segunda"/>
+                            <p:selectOneRadio id="segunda" value="#{questionView.cuandoNovio}" required="true" requiredMessage="Obvio!!! Las tres son la misma">
+                                <f:selectItem itemLabel="#{questionView.timeAniversarioMili}" itemValue="#{questionView.timeAniversarioMili}" />
+                                <f:selectItem itemLabel="#{questionView.años}" itemValue="#{questionView.años}" />
+                                <f:selectItem itemLabel="#{questionView.dias}" itemValue="#{questionView.dias}" />
+                            </p:selectOneRadio>
+                            <p:message for="segunda"/>
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel value="¿Como se conocieron los novios?" for="tercera"/>
+                            <p:selectOneRadio id="tercera" value="#{questionView.comoConocieron}" required="true" requiredMessage="pon lo que piensas">
+                                <f:selectItem itemLabel="Amigos" itemValue="Amigos" />
+                                <f:selectItem itemLabel="Suegros" itemValue="Suegros" />
+                                <f:selectItem itemLabel="Por internet" itemValue="Por internet" />
+                                <f:selectItem itemLabel="Amor a primera vista" itemValue="Amor a primera vista" />
+                                <f:selectItem itemLabel="Nos conocimos bailando" itemValue="Nos conocimos bailando" />
+                                <f:selectItem itemLabel="Nos comprometieron de niños" itemValue="Nos comprometieron de niños" />
+                                <f:selectItem itemLabel="Intercambio por frijolito y maiz" itemValue="Intercambio por frijolito y maiz" />
+                            </p:selectOneRadio>
+                            <p:message for="tercera"/>
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel value="¿Que es lo que mas les gusta hacer juntos a los novios?" for="cuarta"/>
+                            <p:inputText id="cuarta" value="#{questionView.hacerJuntos}" required="true" requiredMessage="pon lo que piensas"/>
+                            <p:message for="cuarta"/>
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel value="¿Vas a dar regalo?" for="regalo"/>
+                            <p:selectOneRadio id="regalo" value="#{questionView.regalo}" required="true" requiredMessage="cualquiera de los dos si no, no hay pase">
+                                <f:selectItem itemLabel="Si" itemValue="1" />
+                                <f:selectItem itemLabel="No" itemValue="0" />
+                            </p:selectOneRadio>
+                            <p:message for="regalo"/>
+                        </pm:field>
+                        <p:commandButton value="Evalua Respuestas" action="#{questionView.evaluaRespuestas()}" icon="ui-icon-heart" update="cuestionarioForm" rendered="#{!questionView.muestraDatos}"/>
+                    </p:panel>
+                    <p:panel header="Mesa de regalo de liverpool" rendered="#{questionView.muestraDatos}">
+                        <a target="_blank" href="http://www.liverpool.com.mx/tienda/giftregistry/giftRegistryDetail.jsp?eventDNo=37427847">
+                            <h:outputText value="Numero de evento = 37427847"/>
+                        </a>
+                    </p:panel>
+                    <p:panel header="Donde y cuando" rendered="#{questionView.muestraDatos}">
+                        <h:outputText value="Se efectuara  primeramente a la bendición de Dios , en la parroquia de san juan bautista el día 27 de febrero  alas 18hrs
+                                      y posteriormente a la ceremonia civil en el salón ´´jardines de coita´´ ubicado en boulevard juan Sabines."/>
+                        <h:outputLink value="https://www.google.com.mx/maps/@16.7579373,-93.3671711,19.83z" title="Google maps">
+                            <h:outputText value="Google maps" />
+                        </h:outputLink>
+                        <!--                        <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=aXNpMTQ4aHEwc25wMnN1MGlpOTg3bWM0MHMgYWJlbGl0cm9vQG0&amp;tmsrc=abelitroo%40gmail.com">
+                                                    <img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_es.gif"></img>
+                                                </a>-->
+                    </p:panel>
+
+                    <p:outputLabel rendered="#{questionView.muestraDatos}"> <h2>Nuestros Padres</h2></p:outputLabel>
+                    <p:accordionPanel   activeIndex="-1" multiple="true" rendered="#{questionView.muestraDatos}">
+                        <p:tab title="Del Novio">
+                            Sergio A. Gutierrez Montoya Y H. Soledad Zebadua Montoya 
+                        </p:tab>
+                        <p:tab title="De la Novia">
+                            Pedro Perez Hernandez Y Yolanda Y. Rodriguez Espinosa 
+                        </p:tab>
+
+                    </p:accordionPanel>
+
+                    <p:commandButton value="Confirmar Asistencia" action="pm:four" icon="ui-icon-heart" rendered="#{questionView.muestraDatos}"/>
+                </h:form>
+            </pm:content>
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false">
+                <p style="font-family: Edwardian Script ITC;">por @Abel y @Ursulita corriendo y desplegado en exclusivo para nuestra boda</p>
+                <!--<p>by @abelitroo </p>-->
+            </pm:footer>
+        </pm:page>
+
+        <pm:page id="four">
+            <pm:header title="Pagina 4">
+                <p:button class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" outcome ="pm:second?transition=slideup"  />
+            </pm:header>
+            <pm:content>
+                <p:panel header="Datos" >
+                    <h:form id="confirmAsistenciaForm">
+                        <pm:field>
+                            <p:outputLabel value="Nombres:" for="nombre"/>
+                            <p:inputText id="nombre" value="#{invitacionView.name}" required="true" disabled="#{invitacionView.qr}"/>
+                            <p:message for="nombre"/>
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel value="Apellidos:" for="apellido"/>
+                            <p:inputText id="apellido" value="#{invitacionView.lastName}" required="true" disabled="#{invitacionView.qr}"/>
+                            <p:message for="apellido"/>
+                        </pm:field>
+                        <pm:field>
+                            <p:outputLabel value="Numero de pases:" for="pases"/>
+                            <p:selectOneMenu id="pases" value="#{invitacionView.number}" required="true" disabled="#{invitacionView.qr}">
+                                <f:selectItem itemLabel="1" itemValue="1" />
+                                <f:selectItem itemLabel="2" itemValue="2" />
+                                <f:selectItem itemLabel="3" itemValue="3" />
+                                <f:selectItem itemLabel="4" itemValue="4" />
+                                <f:selectItem itemLabel="5" itemValue="5" />
+                            </p:selectOneMenu>
+                            <p:message for="pases"/>
+                        </pm:field>
+                        <p:barcode value="#{invitacionView.url}" type="qr" rendered="#{invitacionView.qr}"/>
+                        <p:commandButton value="Confirmar Asistencia" action="#{invitacionView.confirmAsistencia()}" update="confirmAsistenciaForm" icon="ui-icon-heart" rendered="#{!invitacionView.qr}">
+                        </p:commandButton>
+                        <p:commandButton id="btn" value="Bajar Pase Digital" ajax="false"  update="confirmAsistenciaForm" icon="ui-icon-heart" rendered="#{invitacionView.qr}">
+                            <p:fileDownload value="#{invitacionView.sc}" />
+                        </p:commandButton>
+                    </h:form>
+                </p:panel>
+            </pm:content>
+            <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false">
+                <p style="font-family: Edwardian Script ITC;">por @Abel y @Ursulita corriendo y desplegado en exclusivo para nuestra boda</p>
+                <!--<p>by @abelitroo </p>-->
+            </pm:footer>
+        </pm:page>
+
+
+        <script language="javascript" src="#{request.contextPath}/resources/main/js/sh.js"></script>
+        <script language="javascript">
+            SyntaxHighlighter.all();
+        </script>
+
+    </h:body>
+
+</html>

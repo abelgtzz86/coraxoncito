@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="content">
+        <pm:content styleClass="jqm-content">
+            <h:form id="corazoncitoForm">
+                <h2 class="first">¿Quien eres?</h2>
+                <!--<p:growl id="growl" showDetail="true" />-->
+                <p:messages globalOnly="true" showDetail="true" showSummary="true" />
+                <pm:field>
+                    <p:outputLabel for="basic" value="Email o Facebook:" />
+                    <p:inputText id="basic" value="#{corazoncitoView.user}"/>
+                </pm:field>
+
+                <pm:field>
+                    <p:outputLabel for="password" value="Password:" />
+                    <p:password id="password" value="#{corazoncitoView.pass}" required="true" requiredMessage="password incorrecto"/>
+                    <p:message for="password"/>
+                </pm:field>
+
+                <p:commandButton id="btn" value="Login" action="#{corazoncitoView.login}" update="corazoncitoForm" icon="ui-icon-heart" />
+            </h:form> 
+        </pm:content>
+    </ui:define>
+
+</ui:composition>
