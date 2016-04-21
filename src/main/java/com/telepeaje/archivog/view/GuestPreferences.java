@@ -25,7 +25,7 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class GuestPreferences implements Serializable {
     
-    private String theme = "south-street";
+    private String theme = "pepper-grinder";
 
 	public String getTheme() {		
 		return theme;

@@ -58,7 +58,7 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 		.logoBlueText{color:#25aae1;}
  
 	/* menu side style*/
-	#MENUSIDE{width:85px; float:left; background-color:#006428; border-right:solid 1px #151d21; overflow:hidden; width: 195px; position: fixed;}
+	#MENUSIDE{width:85px; float:left; background:#ffffff url("/cor/javax.faces.resource/images/ui-bg_fine-grain_15_ffffff_60x60.png.xhtml?ln=primefaces-pepper-grinder") 50% 50% repeat; border-right:solid 1px #151d21; overflow:hidden; width: 195px; position: fixed;}
 		#MENUSIDEindent{width:100%; height:auto;}
 			#LOGO{height:87px; display:block; padding:27px 0 5px 10px; z-index:997; ;margin-left:0px}
 				#LOGO img{width:185px; height:auto; }

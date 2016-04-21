@@ -5,18 +5,16 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:pm="http://primefaces.org/mobile"
                 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-                template="/WEB-INF/mobile.xhtml">
+                template="/WEB-INF/template.xhtml">
 
     <ui:define name="content">
-        <pm:content styleClass="jqm-content">
-            <div style="text-align:center">
-                <div class="ui-messages-error ui-corner-all">
-                    <span class="ui-messages-error-icon"></span>
-                    <ul><span class="ui-messages-error-summary">Error 500!</span><span class="ui-messages-error-detail">#{pfExceptionHandler.message}.</span></ul>
-                </div>
+        <div style="text-align:center">
+            <div class="ui-messages-error ui-corner-all">
+                <span class="ui-messages-error-icon"></span>
+                <ul><span class="ui-messages-error-summary">Error 500!</span><span class="ui-messages-error-detail">#{pfExceptionHandler.message}.</span></ul>
             </div>
-            <h:outputText value="#{pfExceptionHandler.formattedStackTrace}" escape="false" />
-        </pm:content>
+        </div>
+        <h:outputText value="#{pfExceptionHandler.formattedStackTrace}" escape="false" />
     </ui:define>
 
 </ui:composition>
