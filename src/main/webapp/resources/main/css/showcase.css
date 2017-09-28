@@ -58,7 +58,7 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 		.logoBlueText{color:#25aae1;}
  
 	/* menu side style*/
-	#MENUSIDE{width:85px; float:left; background:#ffffff url("/cor/javax.faces.resource/images/ui-bg_fine-grain_15_ffffff_60x60.png.xhtml?ln=primefaces-pepper-grinder") 50% 50% repeat; border-right:solid 1px #151d21; overflow:hidden; width: 195px; position: fixed;}
+	#MENUSIDE{width:85px; float:left; background-color:#5D9730; border-right:solid 1px #151d21; overflow:hidden; width: 195px; position: fixed;}
 		#MENUSIDEindent{width:100%; height:auto;}
 			#LOGO{height:87px; display:block; padding:27px 0 5px 10px; z-index:997; ;margin-left:0px}
 				#LOGO img{width:185px; height:auto; }
@@ -83,11 +83,11 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 				
 	
 	/* content side style*/
-	#CONTENTSIDE{width:auto; overflow:hidden; z-index:1; margin-left:195px; background-color:#eff3f6;}
+	#CONTENTSIDE{width:auto; overflow:hidden; z-index:1; margin-left:195px; background-image:url(#{resource['main/images/back.gif']});}
 		#CONTENTSIDEindent{width:100%; height:auto;}
 			.ContentSideSections{display:block; border-bottom:solid 1px #bcc7cf; padding:30px;}
 			.MOBILE .ContentSideSections{padding:14px 24px;}
-			#PFTopLinksCover{background-color:#eff3f6;}
+			#PFTopLinksCover{background-image:url(#{resource['main/images/back.gif']});}
 			#PFMobileTopLinksCover{ position:inherit;}
 				.PFTopLinks{width:80px; display:inline-block; text-align:center; padding:5px; border-radius:5px;  font-size:12px; -webkit-border-radius:5px; margin-top:-10px; -webkit-transition: all 0.5s ease; 
 							-moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; overflow:hidden;}
@@ -129,7 +129,7 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 			.MOBILE .BoxesIndent{width:85%; float:none; margin:0px auto; padding-top:30px;}
 	
 /** ThemeSwitcher **/
-.navOverlay{width:200px; max-height:400px; overflow-y:auto; background-color:#eff3f6; border:solid 1px #bcc7cf; z-index:99999999999; position: absolute; 
+.navOverlay{width:200px; max-height:400px; overflow-y:auto; background-image:url(#{resource['main/images/back.gif']}); border:solid 1px #bcc7cf; z-index:99999999999; position: absolute; 
 				border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2); -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2); 
 				box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2); margin-left:-60px; display: none;}
 					.navOverlay a{display:block; padding:10px; border-bottom:solid 1px #bcc7cf; text-align:left; color:#87939B; overflow:hidden;}
@@ -245,7 +245,7 @@ input.searchInput {
 }
 
 .Implementation {
-    background-color:#dfe4e6;
+    background-color:rgba(223, 228, 230, 0.5);
 }
 
 .Implementation h3 {
@@ -460,3 +460,9 @@ input.searchInput {
 .ui-theme.ui-theme-ui-lightness{ background-position: -80px -768px; width: 30px; height: 27px; } 
 .ui-theme.ui-theme-vader{ background-position: -80px -845px; width: 30px; height: 27px; } 
 .ui-theme.ui-theme-metroui{ background: url("#{resource['demo/images/metroui.png']}") no-repeat top left; display: block;width: 30px; height: 27px;} 
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

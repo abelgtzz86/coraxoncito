@@ -1,0 +1,87 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+    </ui:define>
+
+    <ui:define name="title">
+        CARNAVAL ZOQUE COITECO
+    </ui:define>
+
+    <ui:define name="description">
+        <br/>COHUINAS<br/>
+        <br/>DE SAN ANTONIO “EL MAHOMA DE COCHI”<br/>
+        <br/>DE SANTO DOMINGO “ EL CABALLO”<br/>
+        <br/>DE LA VIRGEN DE NATIVIDAD “EL MAHOMA”<br/>
+        <br/>DE SAN BERNABE “EL DAVID”<br/>
+        <br/>DE SANTA MARTHA “EL TIGRE”<br/>
+        <br/>DE SAN MIGUEL ”LOS MONITOS” <br/>
+    </ui:define>
+
+    <ui:define name="implementation">
+        <h:form id="excelForm" enctype="multipart/form-data">
+
+            <p:growl id="messages" showDetail="true" />
+
+            <p:panel  style="margin-top:20px">
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:graphicImage name="demo/images/carnaval3.jpg" styleClass="img-responsive"/>
+                    <h:outputText
+                        value="
+                        CARNAVAL ZOQUE COITECO UNO DE LOS MEJORES MOMENTOS PARA CONOCER
+                        OCOZOCOAUTLA, ES SIN LUGAR A DUDAS DURANTE SU FAMOSO CARNAVAL ZOQUE
+                        COITECO, DEL CUAL ORIGINALMENTE Y HASTA DONDE SABEMOS NUESTROS
+                        ANCENTROS LO LLEVAN A CABO EN HONOR A TAJAJ JAMA, QUE EN LENGUA ZOQUE
+                        SIGNIFICA “PADRE DEL SOL”. MISMO QUE A LA LLEGADA DE LOS ESPAÑOLES, SE
+                        CONVIERTE EN UNA TRADICIÓN PAGANO RELIGIOSA, REPRESENTADA A TRAVÉZ DE
+                        DE UNA BATALLA ENTRE EL BIEN Y EL MAL, DEJANDO A GOLIAT  Vs.  DAVID 
+                        MAHOMA Vs. LA IGLESIA Y EL MAL Vs. EL BIEN, DISFRUTANDO DE SU RIVALIDAD,
+                        INMERSOS EN ALEGRIA Y DIVERCIÓN .
+                        AUNQUE ALLI SE PUEDE ACUDIR DURANTE TODO EL AÑO, SERÁ MÁS ESPECTACULAR 
+                        CUANDO TODO EL PUEBLO
+                        OFRECE A SUS VISITANTES,  MUCHA DIVERCIÓN EN LA CELEBRACIÓN DEL CARNAVAL
+                        MAS EXTRAORDINARIO  DEL ESTADO, EL CUAL NO A PERDIDO EL AMBIENTE
+                        TRADICIONAL DESDE QUE SE CELEBRÓ POR PRIMERAVEZ.
+                        COMO EN TODA FIESTA, SE CUENTAN  CON PERSONAJES PRINCIPALES, LOS CUALES
+                        EN CONJUNTO FORMAN UN DESFILE MULTICOLOR DE ALEGRIAY DIVERCIÓN:
+                        " />
+                </p:panelGrid>
+            </p:panel>
+            <p:panel  style="margin-top:20px">
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:graphicImage name="demo/images/carnaval2.jpg" styleClass="img-responsive"/>
+                    <p:column>
+                        <h:outputText value="MAHOMA Y LOS DANZANTES:" /><br/>
+                        <h:outputText value=" REPRECENTAN A LOS SOLDADOS DEL GIGANTE GOLIAT" /><br/><br/>
+                        <h:outputText value="DAVID Y LOS DANZANTES:" /><br/>
+                        <h:outputText value="REPRESENTAN A LOS SOLDADOS DE ISRAEL" /><br/><br/>
+                        <h:outputText value="EL CABALLO:" /><br/>
+                        <h:outputText value="REPRESENTA AL APÓSTOL SANTIAGO Y ES ACOMPAÑADO DE DAVID" /><br/><br/>
+                        <h:outputText value="EL TIGRE JAGUAR:" /><br/>
+                        <h:outputText value="REPRESENTA EL CORAJE Y LA RECIEDAD DE LOS INDIOS ZOQUES" /><br/><br/>
+                        <h:outputText value="LOS MONITOS:" /><br/>
+                        <h:outputText value="REPRECENTAN LAS RAÍCES ANCESTRALES " /><br/><br/>
+                    </p:column>
+                </p:panelGrid>
+            </p:panel>
+            <p:panel  style="margin-top:20px">
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:graphicImage name="demo/images/carnaval1.jpg" styleClass="img-responsive"/>
+                    <h:outputText
+                        value="ANTERIORMENTE EL CARNAVAL ERA ORGANIZADO POR LA COFRADIA MAYOR Y LA
+                        MENOR, GRUPO QUE FUNCIONABA COMO UNA HERMANIDAD, ENCARGADO DE LA
+                        REALIZACIÓN  DE LA FIESTA.
+                        EN LA ACTUALIDAD EL CARNAVAL ES ORGANIZADO POR LA AUTORIDAD MUNICIPAL,
+                        LOS COHUINÁS (personas que tienen por encargo celebrar el carnaval, acompañados de la junta representativa). EL PATRONATO PROPIO DEL CARNAVAL Y LOS CLUBES SOCIALES." />
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

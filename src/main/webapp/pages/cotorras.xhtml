@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+    </ui:define>
+
+    <ui:define name="title">
+        SIMA DE LAS COTORRAS
+    </ui:define>
+
+    <ui:define name="description">
+        <br/>De Ocozocoautla - entronque a Piedra Parada, y de este entronque el camino de terracería hasta la Sima de las Cotorras, recorriendo un total de 18 km. <br/>
+    </ui:define>
+
+    <ui:define name="implementation">
+        <h:form id="excelForm" enctype="multipart/form-data">
+
+            <p:growl id="messages" showDetail="true" />
+
+            <p:panel  style="margin-top:20px">
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:graphicImage name="demo/images/cotorras1.gif" styleClass="img-responsive"/>
+                    <h:outputText
+                        value="
+                        Es un hundimiento de la tierra de una profundidad aproximada de 140 mts. y un diámetro de 160 mts. Las paredes de esta Sima están constituidas por rocas calizas que son fácilmente identificadas por estar plegadas horizontalmente y encimadas unas sobre otras en forma de capas. Sobre su pared se puede encontrar una gran variedad de pinturas rupestres de la etnia zoque y en el fondo un bosque en el que habitan un sin número de cotorras. Dentro de las pinturas destacan huellas de manos pintadas de color rojo , encontrando a la vez pinturas en color ocre , representando guerreros, animales y muchas otras ilegibles.
+                        El rojo ocre es mas oscuro a mayor antigüedad y más claro a la edad más temprana. Por la tonalidad del rojo, se presume que se realizaron varias incursiones humanas en diferentes épocas. La flora está constituida en su interior por vegetación subperennifolia y en el exterior por pastizales y arbustos dispersos; mientras su fauna está conformada por especies como el conejos, tlacuache, tejón, ardilla, armadillo, pajuil, chachalaca olivacea y una gran cantidad de cotorras. Este sitio se puede visitar durante todo el año. Se han explorado cuatro simas que son  sótano viejo, el ojo de tigre, la lucha y las cotorras o copal " />
+                </p:panelGrid>
+            </p:panel>
+            <p:panel  style="margin-top:20px">
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:graphicImage name="demo/images/cotorras2.jpg" styleClass="img-responsive"/>
+                    <p:column>
+                        <h:outputText value="Atractivos" /><br/>
+                        <h:outputText value="Cañón del Río la Venta, Cascada el Aguacero, Parque Educativo Laguna Bélgica." /><br/><br/>
+                        <h:outputText value="ECOTURISMO " /><br/>
+                        <h:outputText value="Observación de flora y fauna Cabalgata " /><br/><br/>
+                        <h:outputText value="Observación de fenómenos y maravillas naturales Escalada " /><br/>
+                        <h:outputText value="Senderismo Caminata " /><br/><br/>
+                        <h:outputText value="AVENTURA " /><br/><br/>
+                        <h:outputText value="Rappelismo " /><br/><br/>
+                    </p:column>
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

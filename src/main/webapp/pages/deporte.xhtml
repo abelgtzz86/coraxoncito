@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+    </ui:define>
+
+    <ui:define name="title">
+        Calma Coita que Vamos Ganando
+    </ui:define>
+
+    <ui:define name="description">
+        <br/>Calma Coita que Vamos Ganando<br/>
+    </ui:define>
+
+    <ui:define name="implementation">
+        <h:form id="excelForm" enctype="multipart/form-data">
+
+            <p:growl id="messages" showDetail="true" />
+
+            <p:panel  style="margin-top:20px">
+                <p:graphicImage name="demo/images/deporte1.gif" styleClass="img-responsive"/>
+            </p:panel>
+            <p:panel  style="margin-top:20px">
+                <h:outputText value="
+                              Esta es una de razón que  buenos jugadores de Tuxtlecos, salvo raras excepciones, sólo estaban en el equipo de los 15 a los 18 años, porque a esa edad se iban a estudiar fuera. En cambio en los pueblos chicos, los basquetbolistas jugaban hasta casi los 30 años, a menos que llegara un jovencito mejor, que los desbancara. Por la edad, eran más grandes y pesados que los Tuxtlecos y se conocían muy bien por haber jugado más tiempo juntos.
+                              Recuerdo que en el equipo de Tuxtla estaba Glusteín el Pelón Yaven,  su hermano Amín Tincho Yaven, Carlos Castillejos, Jaime Grajales, los extranjeros: Orlando Corzo, que era de Villaflores, Sergio la Musha Ibarra, que era Turulo y Fidelfo la Fanfarinfa Rodríguez, orgullosamente Coiteco, además de la gran estrella Tuxtleca de aquellos tiempos, Oscar la Varita Castañón.
+                              El equipo de Tapachula era un gran rival con Guayo el Pelón Linazasoro, Bernardo el Mollón Reyes, Guillermo el Chocolate Monzón, Neftalí la Cubana Cruz, Caregato Carranza, Paco Arreola, Julio el Tractor Bravo, Pichu Ross y Fito la Garza Peña.
+                              Por cierto, en 1960 se hizo una selección de Chiapas integrada por jugadores de Tuxtla y Tapachula, que fue a competir en los nacionales y sacaron un honroso cuarto lugar, el mejor en la historia del basquetbol en Chiapas. Pero esa ya es otra historia.
+                              El equipo que siempre le sacaba canas verdes a Tuxtla era el de Coita, que contaba entre sus filas con Jorge Chanona, Luis el Güero León, Ramiro el Muñeco Farrera, Neftalí Cabrera, Hoffman el Chueco González y muchos más que ya no recuerdo. Coita, con todo y que era un pueblo más chico, siempre representaba un rival peliagudo y a veces hasta nos ganaba.
+                              A los aficionados Tuxtlecos, que retacábamos La Cancha Matías, como le llamábamos para abreviar, nos indignaba que los Coitecos nos faltaran al respeto debido a la Capital y en una ocasión fraguamos una treta para hacer enojar a los jugadores, por aquello de el que se enoja pierde.
+                              Los espectadores en la cancha siempre nos sentábamos organizados por simpatías, de un lado, toda una mitad de las gradas, las ocupábamos los Tuxtlecos, echándole porras a Tuxtla hasta desgañitarnos. La otra mitad la ocupaban los fuereños: de Coita, Chiapa de Corzo, de Villaflores, etc., gritando también a todo pulmón a favor del rival de Tuxtla, fuera el que fuera. En una final, en la segunda mitad del partido, que Coita iba ganando, toda la porra Tuxtleca, a coro dijimos un verso ensayado para la ocasión:
+
+                              " /><br/>
+                <br/>
+                <h:outputText value="Como dijo Hernán Cortés:" /><br/>
+                <h:outputText value="¡que árbol de la noche triste ni que... nada!" /><br/>
+                <h:outputText value="No se puede con la Indiada…" /><br/>
+                <br/>
+                <h:outputText value="El efecto fue inmediato, los jugadores Coitecos, bastante molestos por aquel insulto estúpido, empezaron a perder balones y a fallar tiros fáciles, permitiendo que Tuxtla se les acercara en el marcador.
+                              Entonces surgió la figura de su entrenador, Don Jacobo Sol Gutiérrez, que con toda la calma que él siempre exhibía en cualquier circunstancia, los hizo reaccionar y concentrarse en lo importante, que era el juego y acuñando una frase que a partir de entonces se ha vuelto uno de los dichos preferidos del acerbo popular no sólo Coiteco, sino Chiapaneco, les gritó:" /><br/>
+                <br/><h:outputText value="¡CALMA COITA QUE VAMOS GANANDO!" /><br/>
+                <br/>
+                <h:outputText value="ES MAS IMPORTANTE EL CUENTO QUE LA HISTORIA" /><br/>
+                <h:outputText value="Agradecemos a la Republica en Chiapas por la anécdota." /><br/>
+                <h:outputText value="LA CARICATURA DEL PROFR. JORGE CHANONA" /><br/>
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

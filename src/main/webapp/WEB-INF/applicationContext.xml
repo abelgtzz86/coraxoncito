@@ -13,22 +13,22 @@
     <context:component-scan base-package="com.telepeaje.*" />
     <context:annotation-config />
     
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
                 <value>classpath:jdbc.properties</value>
             </list>
         </property>
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
-    </bean>
+    </bean>-->
 
-    <bean id="tedisaDS" class="oracle.jdbc.pool.OracleDataSource" 
+<!--    <bean id="tedisaDS" class="oracle.jdbc.pool.OracleDataSource" 
           destroy-method="close"> 
         <property name="DriverType" value="thin" /> 
         <property name="URL" value="${jdbc.url}" /> 
         <property name="User" value="${jdbc.username}" /> 
         <property name="Password" value="${jdbc.password}" /> 
-    </bean>
+    </bean>-->
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 

@@ -46,12 +46,12 @@
             <version>3.7</version>
         </dependency>
         
-        <dependency>
+<!--        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc</artifactId>
             <version>7</version>
-            <!--<scope>provided</scope>-->
-        </dependency>
+            <scope>provided</scope>
+        </dependency>-->
         <!--spring framework-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -181,10 +181,10 @@
             <layout>default</layout>
             <name>Repository for library PrimeFaces-maven-lib</name>
         </repository>
-        <repository>
+<!--        <repository>
             <id>internal</id>
             <name>tedisa Repository</name>
             <url>http://172.16.16.47:8082/repository/internal</url>
-        </repository>
+        </repository>-->
     </repositories>
 </project>
